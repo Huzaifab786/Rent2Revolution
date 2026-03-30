@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/marketing/navbar";
-import { PropertySearch } from "@/components/marketing/property-search";
 import { AboutStats } from "@/components/marketing/about-stats";
 import { WhyChoose } from "@/components/marketing/why-choose";
 import { PopularProperties } from "@/components/marketing/popular-properties";
@@ -47,14 +46,6 @@ export default function HomePage() {
               className="h-[420px] w-full rounded-[2rem] object-cover md:h-[520px]"
             />
           </div>
-        </div>
-
-        {/* Floating Search */}
-        <div className="site-container -mt-6 pb-14 md:-mt-10">
-          <PropertySearch />
-        </div>
-        <div className="site-container">
-          <div className="h-px w-full bg-border" />
         </div>
       </section>
 
