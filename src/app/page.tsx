@@ -31,6 +31,17 @@ export default function HomePage() {
               Book Consultation
             </Button>
           </div>
+          <div className="relative">
+            <div className="absolute -inset-3 -z-10 rounded-[2rem] bg-card shadow-soft" />
+            <Image
+              src="/images/hero-home.png"
+              alt="Modern UK home"
+              width={1000}
+              height={800}
+              priority
+              className="h-[420px] w-full rounded-[2rem] object-cover md:h-[520px]"
+            />
+          </div>
         </div>
       </section>
 
