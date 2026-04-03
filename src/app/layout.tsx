@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Havenport Realty",
-  description: "Find your dream home in the UK with Havenport Realty.",
+  title: "Rent 2 Revolution",
+  description: "Find your dream home in the UK with Rent 2 Revolution.",
 };
 
 export default function RootLayout({

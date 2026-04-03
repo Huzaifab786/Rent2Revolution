@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Search, User } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -26,11 +27,16 @@ export function Navbar() {
       <div className="site-container flex h-16 items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary text-primary-foreground font-semibold">
-            HR
-          </div>
+          {/* Place your logo file in public/images/logo.png */}
+          <Image
+            src="/images/logo.png"
+            alt="Rent2Revolution Logo"
+            width={40}
+            height={40}
+            className="rounded-2xl object-contain"
+          />
           <span className="text-lg font-semibold tracking-tight">
-            Havenport Realty
+            Rent2Revolution
           </span>
         </div>
 
