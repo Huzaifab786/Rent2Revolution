@@ -7,12 +7,18 @@ const STATS = [
   { label: "Happy Clients", value: "1.5K+" },
 ];
 
-export function AboutStats() {
+interface AboutStatsProps {
+  reversed?: boolean;
+}
+
+export function AboutStats({ reversed = false }: AboutStatsProps) {
   return (
-    <section className="py-14 md:py-18">
-      <div className="site-container grid items-center gap-10 md:grid-cols-2">
+    <section className="py-20 md:py-28">
+      <div
+        className={`site-container grid items-center gap-10 md:grid-cols-2 ${reversed ? "md:flex-row-reverse" : ""}`}
+      >
         {/* Left: Image */}
-        <div className="relative">
+        <div className={`relative ${reversed ? "md:order-last" : ""}`}>
           <div className="absolute -inset-3 -z-10 rounded-[2rem] bg-card shadow-soft" />
           <Image
             src="/images/about-home.png"
@@ -24,7 +30,7 @@ export function AboutStats() {
         </div>
 
         {/* Right: Content */}
-        <div>
+        <div className={reversed ? "md:order-first" : ""}>
           <p className="text-sm font-medium text-muted-foreground">
             Local knowledge, modern guidance
           </p>
