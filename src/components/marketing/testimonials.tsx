@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Marquee } from "@/components/marketing/marquee";
 
 const TESTIMONIALS = [
   {
@@ -10,12 +11,27 @@ const TESTIMONIALS = [
   {
     name: "Daniel R.",
     city: "Manchester",
-    text: "Transparent, responsive, and genuinely helpful. Viewings were well-organised and we never felt pressured—just guided.",
+    text: "Transparent, responsive, and genuinely helpful. Viewings were well-organized and we never felt pressured - just guided.",
   },
   {
     name: "Aisha K.",
     city: "Birmingham",
     text: "We were first-time buyers and had lots of questions. The advice was practical and honest, and we found a warm family home quickly.",
+  },
+  {
+    name: "Oliver P.",
+    city: "Leeds",
+    text: "The team made the search feel easy. Great communication, thoughtful suggestions, and no wasted viewings.",
+  },
+  {
+    name: "Maya S.",
+    city: "Bristol",
+    text: "We appreciated the calm approach and clear next steps. It felt personal without ever feeling pushy.",
+  },
+  {
+    name: "Thomas L.",
+    city: "Glasgow",
+    text: "From the first call to completion, the process stayed organized and reassuring. We'd happily recommend them.",
   },
 ];
 
@@ -24,7 +40,7 @@ function Stars() {
     <div className="flex items-center gap-1">
       {Array.from({ length: 5 }).map((_, i) => (
         <span key={i} className="text-primary">
-          ★
+          *
         </span>
       ))}
     </div>
@@ -48,15 +64,15 @@ export function Testimonials() {
             </p>
           </div>
 
-          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+          <Marquee className="mt-8" speed="slow">
             {TESTIMONIALS.map((t) => (
               <Card
                 key={t.name}
-                className="rounded-3xl border bg-card p-6 shadow-softSm"
+                className="w-[320px] flex-none rounded-3xl border bg-card p-6 gap-4 shadow-softSm"
               >
                 <Stars />
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  “{t.text}”
+                  &ldquo;{t.text}&rdquo;
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
@@ -64,7 +80,7 @@ export function Testimonials() {
                     <AvatarFallback className="bg-primary/10 text-primary">
                       {t.name
                         .split(" ")
-                        .map((p) => p[0])
+                        .map((part) => part[0])
                         .join("")}
                     </AvatarFallback>
                   </Avatar>
@@ -78,7 +94,7 @@ export function Testimonials() {
                 </div>
               </Card>
             ))}
-          </div>
+          </Marquee>
         </div>
       </div>
     </section>
