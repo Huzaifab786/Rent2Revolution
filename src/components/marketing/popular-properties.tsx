@@ -1,10 +1,11 @@
 import { popularProperties } from "@/lib/mock-data";
 import { PropertyCard } from "@/components/marketing/property-card";
 import { Button } from "@/components/ui/button";
+import { Marquee } from "@/components/marketing/marquee";
 
 export function PopularProperties() {
   return (
-    <section className="py-14 md:py-18">
+    <section className="group py-14 md:py-18">
       <div className="site-container">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
@@ -15,19 +16,23 @@ export function PopularProperties() {
               Discover homes families love
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              A curated selection of mid-range properties across the UK—warm,
+              A curated selection of mid-range properties across the UK - warm,
               modern, and ready to view.
             </p>
           </div>
 
-          <Button className="w-fit rounded-full">Browse All Properties</Button>
+          <Button className="w-fit rounded-full bg-[#2f271f] text-white hover:bg-[#44392f]">
+            Browse All Properties
+          </Button>
         </div>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-3">
+        <Marquee className="mt-8" pauseOnHover>
           {popularProperties.map((p) => (
-            <PropertyCard key={p.id} p={p} />
+            <div key={p.id} className="w-[320px] sm:w-[350px]">
+              <PropertyCard p={p} />
+            </div>
           ))}
-        </div>
+        </Marquee>
       </div>
     </section>
   );

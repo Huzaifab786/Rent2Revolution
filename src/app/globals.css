@@ -154,4 +154,22 @@
       padding-inline: 1.5rem; /* 24px */
     }
   }
+
+  .animate-marquee {
+    animation: marquee 36s linear infinite;
+  }
+
+  .animate-marquee-slow {
+    animation: marquee 52s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
