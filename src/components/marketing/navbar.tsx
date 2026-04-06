@@ -20,14 +20,12 @@ export function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all ${
         scrolled
-          ? "border-b bg-background/95 shadow-sm backdrop-blur"
-          : "bg-background/80 backdrop-blur"
+          ? "border-b bg-[#565449]/95 text-white shadow-sm backdrop-blur"
+          : "bg-[#565449]/80 text-white backdrop-blur"
       }`}
     >
       <div className="site-container flex h-16 items-center justify-between">
-        {/* Logo */}
         <div className="flex items-center gap-3">
-          {/* Place your logo file in public/images/logo.png */}
           <Image
             src="/images/logo.png"
             alt="Rent2Revolution Logo"
@@ -35,35 +33,35 @@ export function Navbar() {
             height={40}
             className="rounded-2xl object-contain"
           />
-          <span className="text-lg font-semibold tracking-tight">
+          <span className="text-lg font-semibold tracking-tight text-white">
             Rent2Revolution
           </span>
         </div>
 
-        {/* Desktop Nav */}
-        <nav className="hidden items-center gap-8 text-sm font-medium text-muted-foreground md:flex">
-          <a className="transition hover:text-foreground" href="#">
+        <nav className="hidden items-center gap-8 text-sm font-medium text-white/80 md:flex">
+          <a className="transition hover:text-white" href="#">
             Home
           </a>
-          <a className="transition hover:text-foreground" href="#">
+          <a className="transition hover:text-white" href="#">
             Services
           </a>
-          <a className="transition hover:text-foreground" href="#">
+          <a className="transition hover:text-white" href="#">
             Agents
           </a>
-          <a className="transition hover:text-foreground" href="#">
+          <a className="transition hover:text-white" href="#">
             Properties
           </a>
-          <a className="transition hover:text-foreground" href="#">
+          <a className="transition hover:text-white" href="#">
             Contact
           </a>
         </nav>
 
-        {/* Right Side */}
         <div className="flex items-center gap-3">
-          <Search className="h-5 w-5 cursor-pointer text-muted-foreground hover:text-foreground transition" />
-          <User className="h-5 w-5 cursor-pointer text-muted-foreground hover:text-foreground transition" />
-          <Button className="rounded-full px-6">Sign Up</Button>
+          <Search className="h-5 w-5 cursor-pointer text-white/70 transition hover:text-white" />
+          <User className="h-5 w-5 cursor-pointer text-white/70 transition hover:text-white" />
+          <Button className="rounded-full bg-[#d8cfbc] px-6 text-[#1f1915] hover:bg-[#e5dccb]">
+            Sign Up
+          </Button>
         </div>
       </div>
     </header>
